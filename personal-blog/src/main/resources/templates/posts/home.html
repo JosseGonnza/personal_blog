@@ -19,7 +19,7 @@
             <div class="col-md-8">
                 <div class="mb-3">
                     <h1 class="mt-5">Latest Posts</h1>
-                    <a class="btn btn-success">New Post</a>
+                    <a th:href="@{/post/new}" class="btn btn-success">New Post</a>
                 </div>
                 <!-- método each para acceder a cada iteración de "posts" del PostController -->
                 <div th:each="post : ${posts}" class="card mb-3">
@@ -47,7 +47,7 @@
         </div>
     </footer>
 
-<!-- BOOTSTRAP JS -->
-<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}" ></script>
+    <!-- BOOTSTRAP JS -->
+    <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}" ></script>
 </body>
 </html>
