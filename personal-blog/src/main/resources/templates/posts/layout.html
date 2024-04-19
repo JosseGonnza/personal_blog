@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout</title>
 </head>
 <body>
-$END$
+
+    <!-- HEADER
+    Usamos fragment para crear el header una vez y usarlo en todas las vistas -->
+    <div th:fragment="header-app">
+        <header class="p-2 mb-2 border-bottom bg-dark text-white">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link font-header-items" th:href="@{/post/home}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link font-header-items" th:href="@{/post/mine}">My posts</a>
+                                </li>
+                            </ul>
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle font-header-items" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span th:text="${user.username}"></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/logout}">Log out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+
 </body>
 </html>
