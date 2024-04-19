@@ -19,15 +19,15 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link font-header-items" th:href="@{/post/home}">Home</a>
+                                    <a class="nav-link font-header-items">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link font-header-items" th:href="@{/post/mine}">My posts</a>
+                                    <a class="nav-link font-header-items">My posts</a>
                                 </li>
                             </ul>
                             <div class="dropdown">
                                 <a class="nav-link dropdown-toggle font-header-items" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span th:text="${user.username}"></span>
+                                    <span>Username</span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Profile</a></li>

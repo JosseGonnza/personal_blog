@@ -19,7 +19,7 @@
             <div class="col-md-8">
                 <div class="mb-3">
                     <h1 class="mt-5">Latest Posts</h1>
-                    <a th:href="#" class="btn btn-success">New Post</a>
+                    <a class="btn btn-success">New Post</a>
                 </div>
                 <!-- método each para acceder a cada iteración de "posts" del PostController -->
                 <div th:each="post : ${posts}" class="card mb-3">
@@ -28,13 +28,13 @@
                         <h5 class="card-title" th:text="${post.title}"></h5>
                         <!-- método text para traer el contenido de la clase post -->
                         <p class="card-text" th:text="${post.content}"></p>
-                        <a th:href="#" class="btn btn-secondary float-end mt-2">Read More</a>
+                        <a class="btn btn-secondary float-end mt-2">Read More</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <h2 class="mt-5">Search by Title</h2>
-                <form class="input-group" th:action="#" method="get">
+                <form class="input-group" method="get">
                     <input type="text" class="form-control" placeholder="Search by title..." name="title" aria-label="Search" aria-describedby="search-btn">
                     <button class="btn btn-outline-secondary" type="submit" id="search-btn">Search</button>
                 </form>
