@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
+    <link rel="icon" type="image/png" href="/img/logo_blog.png">
     <!-- BOOTSTRAP CSS -->
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
 </head>
@@ -19,7 +20,7 @@
             <div class="col-md-8">
                 <div class="mb-3">
                     <h1 class="mt-5">Latest Posts</h1>
-                    <a th:href="@{/post/new}" class="btn btn-success">New Post</a>
+                    <a th:href="@{/post/new}" class="btn btn-success"><img src="/img/plus.png" alt="new post"></a>
                 </div>
                 <!-- método each para acceder a cada iteración de "posts" del PostController -->
                 <div th:each="post : ${posts}" class="card mb-3">

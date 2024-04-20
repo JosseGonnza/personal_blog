@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Post Page</title>
+    <link rel="icon" type="image/png" href="/img/logo_blog.png">
     <!-- BOOTSTRAP CSS -->
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
 </head>
@@ -26,7 +27,7 @@
             </div>
 
             <!-- comment -->
-            <div>
+            <div th:if="${not #lists.isEmpty(comments)}" >
                 <ul class="list-group list-group-flush">
                     <li th:each="comment : ${comments}" class="list-group-item">
                         <div class="d-flex justify-content-between">
@@ -37,8 +38,8 @@
                             <p class="mb-0" th:text="${comment.content}"></p>
                             <!-- buttons -->
                             <div th:if="${user != null && user.id == comment.user.id}">
-                                <a class="btn btn-sm btn-warning me-1">edit</a>
-                                <a class="btn btn-sm btn-danger me-1">delete</a>
+                                <a class="btn btn-sm btn-warning me-1"><img src="/img/edit_comment.png" alt="edit"></a>
+                                <a class="btn btn-sm btn-danger me-1"><img src="/img/delete_comment.png" alt="delete"></a>
                             </div>
                         </div>
                     </li>
