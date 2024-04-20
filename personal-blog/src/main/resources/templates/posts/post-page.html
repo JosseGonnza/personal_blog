@@ -26,11 +26,30 @@
             </div>
 
             <!-- comment -->
+            <div>
+                <ul class="list-group list-group-flush">
+                    <li th:each="comment : ${comments}" class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="mb-0 text-primary" th:text="${comment.user.username}"></h6>
+                            <small th:text="${comment.createdAt}"></small>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-0" th:text="${comment.content}"></p>
+                            <!-- buttons -->
+                            <div th:if="${user != null && user.id == comment.user.id}">
+                                <a class="btn btn-sm btn-warning me-1">edit</a>
+                                <a class="btn btn-sm btn-danger me-1">delete</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
 
             <div class="card-footer">
-                <form action="#" method="post">
+                <form th:action="@{/comment/addComment}" method="post">
                     <div class="mb-3">
-                        <input type="hidden" name="postId" value="0" />
+                        <input type="hidden" name="postId" th:value="${post.id}" />
                         <label for="content" class="form-label">Add a comment:</label>
                         <textarea class="form-control" id="content" name="content" rows="3" autocomplete="off"></textarea>
                     </div>
