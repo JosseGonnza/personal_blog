@@ -48,7 +48,7 @@ public class PostController {
 
     @GetMapping("/postPage/{id}")
     public String postPage(@PathVariable Long id, Model model) {
-        PostEntity post = postService.getPostById(id).orElseThrow(() -> new IllegalArgumentException("¡Id del posteo inválido!"));
+        PostEntity post = postService.getPostById(id).orElseThrow(() -> new IllegalArgumentException("Invalid post id"));
         List<CommentEntity> comments = post.getCommments();
 
         model.addAttribute("post", post);
@@ -68,7 +68,7 @@ public class PostController {
 
     @GetMapping("/edit/{id}")
     public String editPost(@PathVariable Long id, Model model) {
-        PostEntity post = postService.getPostById(id).orElseThrow(() -> new IllegalArgumentException("Id del post Inválido"));
+        PostEntity post = postService.getPostById(id).orElseThrow(() -> new IllegalArgumentException("Invalid post id"));
         model.addAttribute("post", post);
         return "/posts/update-post";
     }

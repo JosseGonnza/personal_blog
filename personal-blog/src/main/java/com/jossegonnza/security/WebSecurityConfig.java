@@ -19,7 +19,7 @@ public class WebSecurityConfig {
                         .anyRequest().permitAll()
                 )
                 .formLogin((form) -> form
-                        .loginPage("/login")
+                        .loginPage("/index")
                         .permitAll()
                         .defaultSuccessUrl("/access")
                 )

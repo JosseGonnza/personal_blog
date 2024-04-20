@@ -38,8 +38,8 @@
                             <p class="mb-0" th:text="${comment.content}"></p>
                             <!-- buttons -->
                             <div th:if="${user != null && user.id == comment.user.id}">
-                                <a class="btn btn-sm btn-warning me-1"><img src="/img/edit_comment.png" alt="edit"></a>
-                                <a class="btn btn-sm btn-danger me-1"><img src="/img/delete_comment.png" alt="delete"></a>
+                                <a class="btn btn-sm btn-warning me-1" th:href="@{/comment/edit/{id} (id=${comment.id}) }"><img src="/img/edit_comment.png" alt="edit"></a>
+                                <a class="btn btn-sm btn-danger me-1" th:href="@{/comment/delete/{id} (id=${comment.id}) }"><img src="/img/delete_comment.png" alt="delete"></a>
                             </div>
                         </div>
                     </li>

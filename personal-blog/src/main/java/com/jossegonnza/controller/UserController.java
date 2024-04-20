@@ -32,12 +32,12 @@ public class UserController {
     public String register(UserEntity user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.createUser(user);
-        return "redirect:/login";
+        return "redirect:/index";
     }
 
-    @GetMapping(value = {"/login", "/"})
+    @GetMapping(value = {"/index", "/"})
     public String loginPage() {
-        return "/users/login";
+        return "/users/index";
     }
 
     @GetMapping("/access")
@@ -48,7 +48,7 @@ public class UserController {
             session.setAttribute("user_session_id", optionalUser.get().getId());
             return "redirect:/post/home";
         } else {
-            return "redirect:/login";
+            return "redirect:/index";
         }
     }
 
@@ -59,7 +59,7 @@ public class UserController {
         if (session != null) {
             session.invalidate();
         }
-        return "redirect:/login";
+        return "redirect:/index";
     }
 
 }
