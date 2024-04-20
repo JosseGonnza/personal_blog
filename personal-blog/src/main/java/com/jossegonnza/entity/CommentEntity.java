@@ -20,6 +20,7 @@ public class CommentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition = "TEXT") //Cambia el tipo de dato del contenido a Text, más grande que Strind
     private String content;
     private LocalDateTime createdAt;
 
