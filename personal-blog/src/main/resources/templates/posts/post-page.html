@@ -20,6 +20,7 @@
             <div class="card-header">
                 <h5 class="card-title" th:text="${post.title}"></h5>
                 <strong><p class="text-danger" th:text="${post.user.username}"></p></strong>
+                <strong><p class="text-danger" th:text="${post.user.username}"></p></strong>
                 <span th:text="${post.createdAt}"></span>
             </div>
             <div class="card-body">
@@ -51,11 +52,11 @@
                 <form th:action="@{/comment/addComment}" method="post">
                     <div class="mb-3">
                         <input type="hidden" name="postId" th:value="${post.id}" />
-                        <label for="content" class="form-label">Add a comment:</label>
+                        <label for="content" class="form-label">Añadir Comentario:</label>
                         <textarea class="form-control" id="content" name="content" rows="3" autocomplete="off"></textarea>
                     </div>
                     <div class="text-end">
-                        <button type="submit" class="btn btn-secondary">Comment</button>
+                        <button type="submit" class="btn btn-secondary">Comenta</button>
                     </div>
                 </form>
             </div>

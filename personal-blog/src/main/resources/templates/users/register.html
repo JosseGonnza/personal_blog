@@ -16,12 +16,12 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header bg-dark text-white">
-                        <h3 class="text-center">Registration</h3>
+                        <h3 class="text-center">Registrar</h3>
                     </div>
                     <div class="card-body">
                         <form th:action="@{/register}" method="post">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
+                                <label for="name" class="form-label">Nombre</label>
                                 <input type="text" class="form-control" id="name" name="name" required autocomplete="off">
                             </div>
                             <div class="mb-3">
@@ -29,16 +29,16 @@
                                 <input type="email" class="form-control" id="email" name="email" required autocomplete="off">
                             </div>
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
+                                <label for="username" class="form-label">Nombre de Usuario</label>
                                 <input type="text" class="form-control" id="username" name="username" required autocomplete="off">
                             </div>
                             <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
+                                <label for="password" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="password" name="password" required autocomplete="off">
                             </div>
                             <div class="text-center">
-                                <a th:href="@{/index}" class="btn btn-danger">Cancel</a>
-                                <button type="submit" class="btn btn-dark">Register</button>
+                                <a th:href="@{/index}" class="btn btn-danger">Cancelar</a>
+                                <button type="submit" class="btn btn-dark">Registrar</button>
                             </div>
                         </form>
                     </div>

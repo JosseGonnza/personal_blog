@@ -34,17 +34,17 @@
                     <h2 class="text-center mb-4">Login</h2>
                     <form th:action="@{/index}" method="post">
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
+                            <label for="username" class="form-label">Nombre de Usuario</label>
                             <input type="text" class="form-control" id="username" name="username" required autocomplete="off">
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="password" name="password" required autocomplete="off">
                         </div>
                         <div class="text-center mb-3">
                             <button type="submit" class="btn btn-dark">Login</button>
                         </div>
-                        <p class="text-center">Don't have an account? <a th:href="@{/record}">Register</a></p>
+                        <p class="text-center">¿No tienes una cuenta..? <a th:href="@{/record}">Regístrate</a></p>
                     </form>
                 </div>
             </div>
