@@ -1,5 +1,4 @@
 <h1 align="center">Blog Personal</h1>
-<p align="center">En construcción... ✌️🔜</p>
 
 ## Descripción
 Este proyecto es un blog personal desarrollado en Java utilizando el framework Spring Boot. Proporciona una plataforma para que el usuario pueda crear, editar y eliminar publicaciones, así como interactuar con otros usuarios a través de comentarios. Último añadido de un motor de busqueda por título de la entrada.
