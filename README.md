@@ -1,21 +1,22 @@
-<h1 align="center">Documentación del Proyecto Blog Personal</h1>
+<h1 align="center">Blog Personal</h1>
 <p align="center">En construcción... ✌️🔜</p>
 
 ## Descripción
-Este proyecto es un blog personal desarrollado en Java utilizando el framework Spring Boot. Proporciona una plataforma para que el usuario pueda crear, editar y eliminar publicaciones, así como interactuar con otros usuarios a través de comentarios.
+Este proyecto es un blog personal desarrollado en Java utilizando el framework Spring Boot. Proporciona una plataforma para que el usuario pueda crear, editar y eliminar publicaciones, así como interactuar con otros usuarios a través de comentarios. Último añadido de un motor de busqueda por título de la entrada.
 
 ## Características
 
 Registro y autenticación de usuarios
 Creación, edición y eliminación de publicaciones
-Comentarios en las publicaciones
-Búsqueda de publicaciones por categoría o etiquetas
+Creación, edición y eliminación de comentarios en las publicaciones
+Búsqueda de publicaciones por título.
 
 ## Tecnologías Utilizadas
 - Java
 - Spring Boot
-- Spring Data JPA
 - Thymeleaf
+- Bootstrap
+- PostgreSQL
 
 ## Requisitos de Instalación
 - Java JDK 8 o superior instalado
