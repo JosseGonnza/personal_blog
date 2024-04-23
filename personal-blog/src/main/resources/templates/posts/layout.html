@@ -6,40 +6,45 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Layout</title>
-</head>
-<body>
 
-    <!-- HEADER
-    Usamos fragment para crear el header una vez y usarlo en todas las vistas -->
+</head>
+
+<body style="background: #333; color: #ffffff;">
+
     <div th:fragment="header-app">
-        <header class="p-2 mb-2 border-bottom bg-dark text-white">
+        <header class="ly p-2 mb-2 border-bottom bg-dark text-white">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <div class="container">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link font-header-items" th:href="@{/post/home}">HOME</a>
+                                    <a class="nav-link font-header-items animated-item" th:href="@{/post/home}">BLOG</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link font-header-items" th:href="@{/post/mine}">MIS POSTS</a>
+                                    <a class="nav-link font-header-items animated-item" th:href="@{/post/mine}">MIS POSTS</a>
                                 </li>
                             </ul>
-                            <div class="dropdown">
-                                <a class="nav-link dropdown-toggle font-header-items" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span th:text="${user.name}"></span>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <!-- <li><a class="dropdown-item" href="#">Perfil</a></li> -->
-                                    <li><a class="dropdown-item" th:href="@{/logout}">Cerrar Sesión</a></li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </nav>
             </div>
+            <div class="ly dropdown">
+                <a class="nav-link dropdown-toggle font-header-items" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span th:text="${user.name}"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <li><a class="dropdown-item" href="#">Perfil</a></li> -->
+                    <li><a class="dropdown-item" th:href="@{/logout}">Cerrar Sesión</a></li>
+                </ul>
+            </div>
         </header>
     </div>
+    
 
 </body>
+
 </html>

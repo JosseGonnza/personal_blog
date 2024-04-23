@@ -10,30 +10,30 @@
     <!-- BOOTSTRAP CSS -->
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #212121; color: #fff;">
     <!-- Con include, incrustamos el fragmento que habiamos creado. HEADER -->
     <div th:include="posts/layout.html::header-app"></div>
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">
+    <div class="container mt-5 cp">
+        <div class="row justify-content-center cp">
+            <div class="col-md-8 cp">
+                <div class="card cp">
+                    <div class="card-header cp">
                         <h3>Crear un nuevo Post</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body cp">
                         <form th:action="@{/post/create}" method="post">
-                            <div class="mb-3">
-                                <label for="title" class="form-label">Título</label>
-                                <input type="text" class="form-control" id="title" name="title" autocomplete="off">
+                            <div class="mb-3 cp">
+                                <label for="title" class="form-label cp">Título</label>
+                                <input type="text" class="form-control cp" id="title" name="title" autocomplete="off">
                             </div>
                             <div class="mb-3">
-                                <label for="content" class="form-label">Contenido</label>
-                                <textarea class="form-control" id="content" name="content" rows="20" autocomplete="off"></textarea>
+                                <label for="content" class="form-label cp">Contenido</label>
+                                <textarea class="form-control cp" id="content" name="content" rows="15" autocomplete="off"></textarea>
                             </div>
-                            <div class="text-end">
-                                <a class="btn btn-danger" th:href="@{/post/home}">Cancelar</a>
-                                <button type="submit" class="btn btn-secondary">Publicar</button>
+                            <div class="text-end cp">
+                                <a class="btn btn-danger cp" th:href="@{/post/home}">Cancelar</a>
+                                <button type="submit" class="btn btn-secondary cp">Publicar</button>
                             </div>
                         </form>
                     </div>

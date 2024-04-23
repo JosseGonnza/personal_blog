@@ -10,24 +10,25 @@
     <!-- BOOTSTRAP CSS -->
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #212121; color: #fff;">
 
     <!-- Con include, incrustamos el fragmento que habiamos creado. HEADER -->
     <div th:include="posts/layout.html::header-app"></div>
 
     <div class="container mt-4">
-        <h1>Mis Publicaciones</h1>
-        <div th:each="post : ${posts}" class="card mb-3">
+        <h1 style="margin-bottom: 25px;">Mis Publicaciones</h1>
+        <div th:each="post : ${posts}" class="card mb-4 card-hover" style="background-color: #333; color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
             <div class="card-body">
-                <h3 class="card-title" th:text="${post.title}"></h3>
-                <p class="card-text" th:text="${post.createdAt}"></p>
+                <h5 class="card-title" th:text="${post.title}"></h5>
+                <p style="font-size: 12px;" class="card-text" th:text="${post.createdAt}"></p>
                 <p class="card-text" th:text="${post.content}"></p>
-                <a th:href="@{/post/postPage/{id} (id=${post.id}) }" class="btn btn-primary me-2"><img src="/img/see.png" alt="see"></a>
+                <a th:href="@{/post/postPage/{id} (id=${post.id}) }" class="btn btn-secondary float-end mt-2">Leer Más</a>
                 <a th:href="@{/post/edit/{id} (id=${post.id}) }" class="btn btn-warning me-2"><img src="/img/edit.png" alt="edit"></a>
                 <a th:href="@{/post/delete/{id} (id=${post.id}) }" class="btn btn-danger float-end"><img src="/img/delete.png" alt="delete"></a>
             </div>
         </div>
     </div>
+    
 
     <!-- BOOTSTRAP JS -->
     <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}" ></script>

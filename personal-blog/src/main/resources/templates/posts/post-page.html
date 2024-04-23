@@ -10,37 +10,37 @@
     <!-- BOOTSTRAP CSS -->
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
 </head>
-<body>
+
+<body style="background-color: #212121; color: #fff;">
 
     <!-- Con include, incrustamos el fragmento que habiamos creado. HEADER -->
     <div th:include="posts/layout.html::header-app"></div>
 
-    <div class="container mt-5">
+    <div class="container mt-5 pp">
         <div class="card">
-            <div class="card-header">
-                <h5 class="card-title" th:text="${post.title}"></h5>
-                <strong><p class="text-danger" th:text="${post.user.username}"></p></strong>
-                <strong><p class="text-danger" th:text="${post.user.username}"></p></strong>
-                <span th:text="${post.createdAt}"></span>
+            <div class="card-header pp">
+                <h5 style="color: #ffc107; font-size: 32px;" class="card-title pp" th:text="${post.title}"></h5>
+                <p class="pp user-title" th:text="${post.user.username}"></p>
+                <span style="font-size: 12px;" th:text="${post.createdAt}"></span>
             </div>
-            <div class="card-body">
-                <p class="card-text" th:text="${post.content}"></p>
+            <div class="card-body pp">
+                <p class="card-text pp" th:text="${post.content}"></p>
             </div>
 
             <!-- comment -->
             <div th:if="${not #lists.isEmpty(comments)}" >
-                <ul class="list-group list-group-flush">
-                    <li th:each="comment : ${comments}" class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="mb-0 text-primary" th:text="${comment.user.username}"></h6>
-                            <small th:text="${comment.createdAt}"></small>
+                <ul class="list-group list-group-flush pp">
+                    <li th:each="comment : ${comments}" class="list-group-item pp">
+                        <div class="d-flex justify-content-between pp">
+                            <h6 class="mb-0 pp" th:text="${comment.user.username}"></h6>
+                            <small style="color: #fff; font-size: 12px;" th:text="${comment.createdAt}"></small>
                         </div>
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-0" th:text="${comment.content}"></p>
+                        <div class="d-flex justify-content-between pp">
+                            <p style="color: #fff;" class="mb-0 pp" th:text="${comment.content}"></p>
                             <!-- buttons -->
-                            <div th:if="${user != null && user.id == comment.user.id}">
-                                <a class="btn btn-sm btn-warning me-1" th:href="@{/comment/edit/{id} (id=${comment.id}) }"><img src="/img/edit_comment.png" alt="edit"></a>
-                                <a class="btn btn-sm btn-danger me-1" th:href="@{/comment/delete/{id} (id=${comment.id}) }"><img src="/img/delete_comment.png" alt="delete"></a>
+                            <div class="btn-box" th:if="${user != null && user.id == comment.user.id}">
+                                <a class="btn btn-sm btn-warning me-1 pp" th:href="@{/comment/edit/{id} (id=${comment.id}) }"><img src="/img/edit_comment.png" alt="edit"></a>
+                                <a class="btn btn-sm btn-danger me-1 pp" th:href="@{/comment/delete/{id} (id=${comment.id}) }"><img src="/img/delete_comment.png" alt="delete"></a>
                             </div>
                         </div>
                     </li>
@@ -48,15 +48,15 @@
             </div>
 
 
-            <div class="card-footer">
+            <div style="color: #fff;" class="card-footer pp">
                 <form th:action="@{/comment/addComment}" method="post">
-                    <div class="mb-3">
+                    <div class="mb-3 pp">
                         <input type="hidden" name="postId" th:value="${post.id}" />
-                        <label for="content" class="form-label">Añadir Comentario:</label>
-                        <textarea class="form-control" id="content" name="content" rows="3" autocomplete="off"></textarea>
+                        <label for="content" class="form-label pp">Añadir Comentario:</label>
+                        <textarea class="form-control pp" id="content" name="content" rows="2" autocomplete="off"></textarea>
                     </div>
-                    <div class="text-end">
-                        <button type="submit" class="btn btn-secondary">Comenta</button>
+                    <div class="text-end pp">
+                        <button type="submit" class="btn btn-secondary pp">Comenta</button>
                     </div>
                 </form>
             </div>
