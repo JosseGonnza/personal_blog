@@ -1,4 +1,6 @@
 <h1 align="center">Blog Personal</h1>
+<img src="https://raw.githubusercontent.com/matfantinel/matfantinel/master/waves.svg" width="100%" height="100">
+
 
 ## Descripción
 Este proyecto es un blog personal desarrollado en Java utilizando el framework Spring Boot. Proporciona una plataforma para que el usuario pueda crear, editar y eliminar publicaciones, así como interactuar con otros usuarios a través de comentarios. Último añadido de un motor de busqueda por título de la entrada.
